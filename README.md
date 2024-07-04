@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+## Comando NPM:
+### `npm i apexcharts react-apexcharts axios jwt-decode moment react-hot-toast react-icons @reduxjs/toolkit react-redux react-spinners react-window redux-thunk socket.io-client`
+
+## Como instalar e usar tailwindcss react
+`npm install -D tailwindcss`
+`npx tailwindcss init`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
