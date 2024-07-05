@@ -7,6 +7,14 @@
 `npm install -D tailwindcss`
 `npx tailwindcss init`
 
+## Extensoes importantes
+Tailwind CSS IntelliSense
+Prettier - Code formatter
+Material Icon Theme
+ESLint
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
