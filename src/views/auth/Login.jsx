@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
   const [state, setState] = useState({
@@ -85,6 +86,16 @@ const Login = () => {
                 <span>
                   <FaGoogle />
                 </span>
+                <GoogleOAuthProvider clientId="36508864020-a2buelj816tvcri5bjbv8jmpf6vuptc0.apps.googleusercontent.com">
+                <GoogleLogin
+                  onSuccess={credentialResponse => {
+                    console.log(credentialResponse);
+                  }}
+                  onError={() => {
+                    console.log('Login Failed');
+                  }}
+                />
+              </GoogleOAuthProvider>
               </div>
 
               <div className="w-[135px] h-[35px] flex rounded-md bg-blue-700 shadow-lg hover:shadow-blue-700/50 justify-center cursor-pointer items-center overflow-hidden">
