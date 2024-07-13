@@ -4,7 +4,7 @@ import { admin_login, messageClear } from "../../store/Reducers/authReducer";
 import { PropagateLoader } from "react-spinners";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -112,12 +112,14 @@ const AdminLogin = () => {
           </form>
           <GoogleOAuthProvider clientId="36508864020-a2buelj816tvcri5bjbv8jmpf6vuptc0.apps.googleusercontent.com">
             <GoogleLogin
-              onSuccess={credentialResponse => {
+              onSuccess={(credentialResponse) => {
                 console.log(credentialResponse);
               }}
               onError={() => {
-                console.log('Login Failed');
+                console.log("Login Failed");
               }}
+              size="large" // Tamanho do botão: small, medium, large
+              text="signin" // Texto do botão: signin, signup_with, continue_with
             />
           </GoogleOAuthProvider>
         </div>

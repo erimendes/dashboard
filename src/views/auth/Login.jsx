@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
+// import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
@@ -83,19 +83,18 @@ const Login = () => {
 
             <div className="flex justify-center items-center gap-3">
               <div className="w-[135px] h-[35px] flex rounded-md bg-orange-700 shadow-lg hover:shadow-orange-700/50 justify-center cursor-pointer items-center overflow-hidden">
-                <span>
-                  <FaGoogle />
-                </span>
                 <GoogleOAuthProvider clientId="36508864020-a2buelj816tvcri5bjbv8jmpf6vuptc0.apps.googleusercontent.com">
-                <GoogleLogin
-                  onSuccess={credentialResponse => {
-                    console.log(credentialResponse);
-                  }}
-                  onError={() => {
-                    console.log('Login Failed');
-                  }}
-                />
-              </GoogleOAuthProvider>
+                  <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                      console.log(credentialResponse);
+                    }}
+                    onError={() => {
+                      console.log("Login Failed");
+                    }}
+                    size="large" // Tamanho do botão: small, medium, large
+                    text="signin" // Texto do botão: signin, signup_with, continue_with
+                  />
+                </GoogleOAuthProvider>
               </div>
 
               <div className="w-[135px] h-[35px] flex rounded-md bg-blue-700 shadow-lg hover:shadow-blue-700/50 justify-center cursor-pointer items-center overflow-hidden">
