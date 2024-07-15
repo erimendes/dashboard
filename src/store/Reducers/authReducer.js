@@ -47,5 +47,28 @@ export const authReducer = createSlice({
   },
 });
 
+export const logout = createAsyncThunk(
+  'auth/logout',
+  async({navigate,role},{rejectWithValue, fulfillWithValue}) => {
+
+    console.log("chegou aqui")
+
+      try {
+          const {data} = await api.get('/logout', {withCredentials: true}) 
+          localStorage.removeItem('accessToken',data.token) 
+          if (role === 'admin') {
+              navigate('/admin/login')
+          } else {
+              navigate('/login')
+          }
+          return fulfillWithValue(data)
+      } catch (error) {
+          // console.log(error.response.data)
+          return rejectWithValue(error.response.data)
+      }
+  }
+)
+
+
 export const { messageClear } = authReducer.actions;
 export default authReducer.reducer;
